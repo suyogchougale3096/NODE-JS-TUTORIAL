@@ -15,6 +15,14 @@ http.createServer(function(req,res){
             console.log("File appended success")
         }
     })
+
+    fs.open('./date.js','w',function(err){
+        if(err){
+            console.log("File is not opened.")
+        }else{
+            console.log("File is opened successfully!!")
+        }
+    })
 }).listen(8000,() =>{
     console.log("Server is started!")
 })
