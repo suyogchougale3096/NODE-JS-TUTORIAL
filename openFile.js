@@ -7,4 +7,14 @@ http.createServer(function(req,res){
         res.write(data)
         res.end();
     })
-}).listen(8000)
+
+    fs.appendFile('../hello.txt','Hi suyog',function(err){
+        if(err){
+            console.log("File apended unsuccess")
+        }else{
+            console.log("File appended success")
+        }
+    })
+}).listen(8000,() =>{
+    console.log("Server is started!")
+})
